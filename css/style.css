@@ -1,79 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
 
-*{ 
-    /* setando uma margem e espaçamento global para 0 */
-    
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oxanium', cursive;
 }
 
-body{
-    
-    /* centralizar no centro e fazer o degrade de cima, para baixo e setar o background para não repetir */
-
+body {
     text-align: center;
     background: linear-gradient(to bottom, #6ab7f5, #fff); 
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-main{
-    /* transformar tudo que ta dentro da tag main, em bloco em linha e mudando a posição para relativa */
-
+main {
     display: inline-block;
-    margin-top: 2%;
-    padding: 15px;
     position: relative;
-}
-
-.pokedex{
-    /* setando a resolução/tamanho para 100% para nao conflitar com a resolução do dispositivo usado */
-
     width: 100%;
-    max-width: 400px;
+    max-width: 425px;
+    margin: 0 auto;
 }
 
-.pokemon__image{
-    /* setando a posição para absoluta para o pokemon ficar sobre a pokedex, e escolhendo a posição dele */
+.pokedex {
+    width: 100%;
+    max-width: 425px;
+}
 
+.pokemon__image {
     position: absolute;
-    bottom: 55%;
     left: 50%;
-    transform: translate(-70%, 20%);
-    height: 12%;
+    bottom: 53%;
+    transform: translate(-63%, 20%);
+    height: 18%;
+    z-index: 2;
 }
 
-.pokemon__data{
-     /* setando a posição para absoluta para o nome e o numero do pokemon ficar sobre a pokedex, e escolhendo a posição dele */
-
+.pokemon__data {
     position: absolute;
     font-weight: 600;
-    color: #aaa;
-    top: 54.5%;
+    color: #3a444d;
+    top: 56.5%;
     right: 27%;
-    font-size: clamp(8px, 5vh, 25px);
+    font-size: clamp(8px, 5vw, 25px);
 }
 
-.pokemon__name{
-    /* transformando o primeiro caracter em maiuscúlo */
-
+.pokemon__name {
     color: #3a444d;
     text-transform: capitalize;
 }
 
-.form{
-     /* setando a posição para absoluta para o botao de pesquisa ficar sobre a pokedex, e escolhendo a posição dele */
-
+.form {
     position: absolute;
     width: 65%;
-    top: 63%;
+    top: 65%;
     left: 13.5%;
 }
 
-.input__search{
-    /* estilizando o botao de pesquisa */
-
+.input__search {
     width: 100%;
     padding: 4%;
     outline: none;
@@ -81,79 +67,61 @@ main{
     background-color: #444;
     border: 2px solid #000;
     border-radius: 5px;
-    font-size: clamp(8px, 5vh, 1rem);
+    font-size: clamp(8px, 5vw, 1rem);
     box-shadow: -2px 3px 0 #222, -4px 5px #000;
 }
 
-.buttons{
-    /* estilizando os botões de next e prev */
-
+.counters {
     position: absolute;
-    bottom: 8%;
-    left: 50%;
     width: 65%;
-    transform: translate(-57%, 0);
-    gap: 20px;  
+    bottom: 16.2%;
+    left: 13.5%;
+    padding: 2%;
+    color: white;
+    background-color: #444;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: clamp(8px, 5vw, 1rem);
+    box-shadow: -2px 3px 0 #222, -4px 5px #000;
     display: flex;
+    justify-content: center;
+    gap: 5px;
+    overflow-x: auto;
+    min-height: 45px;
 }
 
-.button{
-    /* estilizando os botões de next e prev */
-    
+.buttons {
+    position: absolute;
+    bottom: 8%;
+    left: 50.5%;
+    width: 65%;
+    transform: translate(-57%, 0);
+    display: flex;
+    gap: 20px;
+}
+
+.button {
     width: 50%;
     padding: 4%;
     color: white;
     background-color: #444;
     border: 2px solid #000;
     border-radius: 5px;
-    font-size: clamp(8px, 5vh, 1rem);
+    font-size: clamp(8px, 5vw, 1rem);
     box-shadow: -2px 3px 0 #222, -4px 5px #000;
+    cursor: pointer;
 }
 
-.button:active{
-    /* estilizando os botões de next e prev */
-
+.button:active {
     box-shadow: inset -4px 4px 0 #222;
     font-size: 0.9rem;
 }
 
-.counters {
-    width: 65%;
-    padding: 2%;
-    color: white;
-    background-color: #444;
-    border: 2px solid #000;
-    border-radius: 5px;
-    font-size: clamp(8px, 5vh, 1rem);
-    box-shadow: -2px 3px 0 #222, -4px 5px #000;
-    display: flex;
-    justify-content: center; /* 👈 Centraliza melhor */
-    gap: 5px; /* 👈 Espaçamento entre ícones */
-    position: absolute;
-    left: 10%;
-    bottom: 56.2%;
-    transform: translate(5%, 350%);
-}
-
-.pokemon__screen {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .pokemon__type {
     position: absolute;
-    bottom: -315px;
-    right: 105px;
+    bottom: 47%;
+    right: 26%;
     display: flex;
-    gap: 4px;
-
+    gap: 1px;
+    z-index: 10;
 }
-
-.pokemon__type img {
-    width: 24px;
-    height: 24px;
-}
-
